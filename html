@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel de Monitoramento Logístico por Posições</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Painel de Monitoramento por Posições</h1>
+    
+    <div class="street-buttons">
+      <button class="street-btn active" data-street="all">TODAS AS RUAS</button>
+      <button class="street-btn" data-street="A">RUA A</button>
+      <button class="street-btn" data-street="B">RUA B</button>
+      <button class="street-btn" data-street="C">RUA C</button>
+      <button class="street-btn" data-street="D">RUA D</button>
+      <button class="street-btn" data-street="E">RUA E</button>
+      <button class="street-btn" data-street="F">RUA F</button>
+      <button class="street-btn" data-street="G">RUA G</button>
+      <button class="street-btn" data-street="H">RUA H</button>
+      <button class="street-btn" data-street="I">RUA I</button>
+      <button class="street-btn" data-street="J">RUA J</button>
+    </div>
+
+    <div class="controls">
+      <button id="refreshBtn">Atualizar Dados</button>
+      <button id="exportBtn">Exportar para Excel</button>
+      <button class="filter-btn" data-filter="all">Todas Posições</button>
+      <button class="filter-btn" data-filter="green"><span class="status-dot dot-green"></span>Posições OK</button>
+      <button class="filter-btn" data-filter="orange"><span class="status-dot dot-orange"></span>Posições em Alerta</button>
+      <button class="filter-btn" data-filter="red"><span class="status-dot dot-red"></span>Posições Urgentes</button>
+      <button class="filter-btn" data-filter="blue"><span class="status-dot dot-blue"></span>Posições Em Processamento</button>
+    </div>
+
+    <div class="table-container">
+      <table id="logisticsTable">
+        <thead>
+          <tr>
+            <th>Posição</th>
+            <th>Status</th>
+            <th>Rua</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-box">
+        <canvas id="statusChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <canvas id="streetChart"></canvas>
+      </div>
+    </div>
+
+    <div class="map-section">
+  <h2>Mapa do Armazém</h2>
+  <img 
+    src="https://drive.google.com/uc?export=view&id=1TnBV_jefWLuSspMGFJHx2ACrWZ10R-wy" 
+    alt="Mapa do Armazém"  
+    class="warehouse-map"
+  >
+</div>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
